@@ -1,75 +1,53 @@
-#STM32H755 Çift Çekirdekli Eğitim Serisi 🚀
+# 🚀 STM32H755 Çift Çekirdekli Eğitim Serisi
 
-Bu depo, STM32H755 NUCLEO-H755ZI-Q geliştirme kartı ile çift çekirdekli gömülü sistem geliştirmeyi öğrenmek isteyenler için hazırlanmış 30 adımlık kapsamlı bir eğitim setini içerir.
+Bu depo, **STM32H755 NUCLEO-H755ZI-Q** geliştirme kartı ile **çift çekirdekli gömülü sistem geliştirmeyi öğrenmek isteyenler** için hazırlanmış **30 adımlık kapsamlı bir eğitim setini** içerir.  
 
-Projenin temel amacı:
-🔍 STM32H755 ve çift çekirdekli ARM tabanlı mikrodenetleyiciler hakkında internetteki bilgi eksikliğini gidermek, Türkçe ve anlaşılır bir kaynak sunmak.
+📌 **Amacımız:**  
+STM32H755 ve çift çekirdekli ARM tabanlı mikrodenetleyiciler konusunda **internetteki bilgi eksikliğini gidermek**, anlaşılır ve Türkçe bir kaynak sunmak.
 
-📦 STM32H755 NUCLEO-H755ZI-Q Teknik Özellikler
-Mikrodenetleyici:
+---
 
-STM32H755ZIQ
+## 📦 STM32H755 NUCLEO-H755ZI-Q Teknik Özellikler
 
-Çift çekirdek:
+**🔹 Mikrodenetleyici:**
+- **Model:** STM32H755ZIQ
+- **Çekirdek Yapısı:**
+  - **Cortex-M7 @ 480 MHz** → Yüksek performans, karmaşık işlem ve hesaplamalar
+  - **Cortex-M4 @ 240 MHz** → Düşük güç tüketimi, yardımcı görevler
+- **Bellek:**
+  - 2 MB Flash (çekirdekler arası paylaştırılabilir)
+  - 1 MB SRAM (ITCM, DTCM ve AXI bölgelerine ayrılmış)
+- **FPU:** Tek/çift hassasiyetli kayan nokta desteği (her iki çekirdekte)
+- **DMA:** 16 kanal
 
-Cortex-M7 @ 480 MHz → Yüksek performans, karmaşık işlem ve hesaplamalar
+**🔹 Bağlantı Arayüzleri:**
+- Ethernet MAC (RMII/MII)
+- USB OTG FS/HS
+- 10x USART/UART
+- 6x SPI / I²S
+- 4x I²C
+- 3x CAN FD
+- SDMMC (SD kart desteği)
 
-Cortex-M4 @ 240 MHz → Düşük güç tüketimi, yardımcı görevler
+**🔹 Giriş/Çıkış:**
+- 144 pin LQFP paket
+- 5V toleranslı bazı GPIO’lar
+- Harici saat kaynağı desteği
 
-Flash Bellek: 2 MB (M7 için 1 MB, M4 için 1 MB paylaştırılabilir)
+**🔹 Diğer Özellikler:**
+- **IPCC** → Çift çekirdek arası iletişim
+- TrustZone-M, Secure Boot
+- Düşük güç modları
+- RTC, Watchdog, Timer
 
-SRAM: Toplam ~1 MB (ITCM, DTCM ve AXI SRAM bölgelerine ayrılmış)
+**🔹 NUCLEO-H755ZI-Q Kart:**
+- Dahili **ST-LINK/V3E** programlayıcı
+- USB Type-B bağlantı
+- Arduino UNO V3 ve ST morpho header pinleri
+- Dahili LED, buton, reset
+- Ethernet RJ45 konnektörü 
 
-FPU: Her iki çekirdekte de tek/double precision desteği
-
-DMA: 16 kanala kadar Direct Memory Access desteği
-
-Bağlantılar ve Arayüzler:
-
-Ethernet MAC (RMII/MII)
-
-USB OTG FS/HS
-
-USART/UART (10 adede kadar)
-
-SPI / I²S (6 adede kadar)
-
-I²C (4 adede kadar)
-
-CAN FD (3 adede kadar)
-
-SDMMC (SD kart desteği)
-
-Giriş/Çıkış:
-
-144 pin LQFP paket
-
-Çok sayıda GPIO (5V toleranslı bazı pinler)
-
-Harici saat kaynağı desteği
-
-Diğer Özellikler:
-
-Çift çekirdek arası iletişim için IPCC (Inter-Processor Communication Controller)
-
-Gelişmiş güvenlik birimleri (TrustZone-M, Secure Boot)
-
-Düşük güç modları
-
-RTC, Watchdog, Timers
-
-NUCLEO-H755ZI-Q Kart Özellikleri:
-
-ST-LINK/V3E dahili programlayıcı
-
-USB Type-B programlama/güç bağlantısı
-
-Arduino UNO V3 ve ST morpho header pinleri
-
-Dahili LED, buton ve reset tuşu
-
-Ethernet RJ45 konnektörü (opsiyonel)
-
+---
 📚 Eğitim Seti Hakkında
 Bu eğitim seti temelden ileri seviyeye adım adım ilerler:
 
