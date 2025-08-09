@@ -1,4 +1,5 @@
-STM32H755 Çift Çekirdekli Eğitim Serisi 🚀
+#STM32H755 Çift Çekirdekli Eğitim Serisi 🚀
+
 Bu depo, STM32H755 NUCLEO-H755ZI-Q geliştirme kartı ile çift çekirdekli gömülü sistem geliştirmeyi öğrenmek isteyenler için hazırlanmış 30 adımlık kapsamlı bir eğitim setini içerir.
 
 Projenin temel amacı:
