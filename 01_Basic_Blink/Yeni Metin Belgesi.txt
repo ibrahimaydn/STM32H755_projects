@@ -1,1 +1,32 @@
-dsadsa
+STM32H755 Blink Projesi – Açıklama ve Kurulum
+
+1. Proje Açıklaması
+Bu proje, STM32H755 mikrodenetleyicisi üzerinde basit bir LED yakıp söndürme (blink) uygulamasıdır.
+Kod, HAL kütüphaneleri kullanılarak geliştirilmiştir ve temel donanım yapılandırmasını içerir.
+Amaç, STM32H7 serisine giriş yapmak isteyenler için kolay bir başlangıç sağlamaktır.
+
+2. Gerekli Donanım
+
+STM32H755 geliştirme kartı
+
+USB bağlantı kablosu
+
+ST-LINK programlayıcı (kart üzerinde gömülü olabilir)
+
+3. Kurulum Adımları
+
+STM32CubeIDE veya Keil uVision kurun.
+
+Bu proje klasörünü bilgisayarınıza indirin veya GitHub’dan klonlayın.
+
+STM32CubeIDE’de File → Open Projects from File System ile proje klasörünü açın.
+
+Bağlı STM32H755 kartınızı seçin ve Run veya Debug ile derleyip yükleyin.
+
+Yükleme tamamlandığında LED’in belirli aralıklarla yanıp söndüğünü göreceksiniz.
+
+4. Notlar
+
+main.c dosyasında LED blink periyodunu değiştirmek için HAL_Delay() değerini düzenleyebilirsiniz.
+
+Proje varsayılan olarak kart üzerindeki LD1 LED’ini kullanır.
