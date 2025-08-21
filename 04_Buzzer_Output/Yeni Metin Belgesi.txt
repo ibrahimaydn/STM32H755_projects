@@ -1,0 +1,47 @@
+====================================================
+📘 04_Buzzer_Output (M7)
+====================================================
+
+[ Projenin Amacı ]
+Bu projede STM32H755’in Cortex-M7 çekirdeği kullanılarak
+buzzer üzerinden ses çıkışı üretilmektedir. 
+Buzzer, kare dalga sinyali ile sürülür ve bu sayede
+farklı frekanslarda sesler elde edilebilir.
+
+Temel amaç:
+- GPIO çıkış kullanımını öğrenmek
+- Buzzer kontrolünü anlamak
+- Basit ses uygulamalarına giriş yapmaktır.
+
+----------------------------------------------------
+[ Donanım Bilgileri ]
+- Geliştirme Kartı : STM32H755 NUCLEO-H755ZI-Q
+- Buzzer           : Pasif buzzer (aktif kullanılabilir)
+- Bağlantı         :
+   • Buzzer (+) → PB1
+   • Buzzer (–) → GND
+
+Not: Kart üzerinde dahili buzzer bulunmadığı için
+harici buzzer modülü gereklidir.
+
+----------------------------------------------------
+[ Çalışma Mantığı ]
+1. GPIO pin çıkış olarak ayarlanır.
+2. Belirli aralıklarla HIGH/LOW yapılır.
+3. Buzzer bobini titreşerek ses üretir.
+4. Frekans arttıkça ses incelir, frekans azaldıkça kalınlaşır.
+
+----------------------------------------------------
+[ Yazılım Detayları ]
+- GPIOB Pin 0 → Çıkış (Buzzer sürümü)
+- Kare dalga üretmek için HAL_Delay() veya Timer kullanılabilir.
+- Örnek: 1 kHz ses için pin her 0.5 ms’de bir toggle edilir.
+
+----------------------------------------------------
+[ Kazanımlar ]
+✔️ GPIO çıkışlarını öğrenme
+✔️ Buzzer ile ses üretme mantığını kavrama
+✔️ Gecikme kullanarak frekans oluşturma
+✔️ Ses tabanlı uyarı sistemlerinin temelini öğrenme
+
+====================================================
