@@ -122,4 +122,4 @@ Her proje detaylı açıklama ve donanım bağlantı şeması içerir.
 ## 🛠 Kurulum
 1. Depoyu klonlayın:
    ```bash
-   git clone https://github.com/kullaniciadi/STM32H755-Tutorials.git
+   git clone https://github.com/ibrahimaydn23/STM32H755_projects.git
