@@ -1,0 +1,47 @@
+====================================================
+📘 05_Debounce_Button (M7)
+====================================================
+
+[ Projenin Amacı ]
+Mekanik butonlar basıldığında veya bırakıldığında, 
+temas yüzeyleri zıplar (bounce/seğirme). 
+Bu yüzden mikrodenetleyici tek bir basışı 
+birden fazla basış gibi algılar.
+
+Bu projede, yazılım tabanlı "debounce" tekniği 
+kullanılarak STM32H755’in Cortex-M7 çekirdeğinde 
+sağlıklı buton okuma sağlanır.
+Her doğru basışta LED’in durumu değiştirilir (toggle).
+
+----------------------------------------------------
+[ Donanım Bilgileri ]
+- Geliştirme Kartı : STM32H755 NUCLEO-H755ZI-Q
+- Buton            : Dahili kullanıcı butonu (B1 → PC13, aktif low)
+- LED              : Dahili LED (LD1 → PB0)
+
+Ekstra donanım bağlantısı gerekmemektedir.
+
+----------------------------------------------------
+[ Çalışma Mantığı ]
+1. Butonun anlık durumu okunur.
+2. Önceki durumla karşılaştırılır.
+3. Değişim varsa zaman damgası alınır.
+4. 50 ms debounce süresi sonunda buton hala aynı durumdaysa
+   geçerli kabul edilir.
+5. Butona basılmışsa LED toggle yapılır.
+
+----------------------------------------------------
+[ Yazılım Detayları ]
+- GPIOC Pin 13 → Giriş (Buton)
+- GPIOB Pin 0  → Çıkış (LED)
+- Debounce süresi : 50 ms
+- HAL_GetTick()   : Zaman kontrolü için kullanılır
+
+----------------------------------------------------
+[ Kazanımlar ]
+✔️ Buton bounce problemini öğrenme
+✔️ Yazılım debounce tekniğini uygulama
+✔️ GPIO giriş/çıkış temellerini pekiştirme
+✔️ LED kontrol uygulaması geliştirme
+
+====================================================
