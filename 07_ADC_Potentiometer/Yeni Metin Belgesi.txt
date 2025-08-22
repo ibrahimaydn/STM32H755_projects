@@ -1,0 +1,54 @@
+# 06_ADC_Potentiometer (M7)
+
+====================================================
+📘 Projenin Amacı
+====================================================
+Bu projede STM32H755’in Cortex-M7 çekirdeği kullanılarak **ADC (Analog-Dijital Çevirici)** ile bir potansiyometre okunur.  
+Potansiyometre üzerinde yapılan ayar, mikrodenetleyici tarafından dijital değere dönüştürülür. Bu değer daha sonra UART üzerinden bilgisayara gönderilebilir veya LED parlaklığı gibi uygulamalarda kullanılabilir.  
+
+Bu proje, **ADC kullanımı ve analog sinyallerin dijital ortama aktarılması** konusunda temel bilgi kazandırır.
+
+----------------------------------------------------
+📌 Donanım Bilgileri
+----------------------------------------------------
+- Geliştirme Kartı : STM32H755 NUCLEO-H755ZI-Q  
+- Potansiyometre   : Harici bağlantı (0–3.3V arası çıkış)  
+- ADC Kanalı       : **ADC1_INP7 (PA7 pini)**  
+- VREF             : Kartın dahili referans voltajı (3.3V)  
+
+Bağlantı Şeması:
+- Potansiyometre Orta Uç → PA7 (ADC1_INP7)  
+- Potansiyometre VCC → 3.3V  
+- Potansiyometre GND → GND  
+
+----------------------------------------------------
+📷 CubeMX Konfigürasyonu
+----------------------------------------------------
+
+Aşağıda proje için CubeMX’te yapılan ADC1 yapılandırması gösterilmektedir:
+
+![ADC Potansiyometre Ayarı](../images/06_adc_potentiometer.png)
+
+- **ADC1 seçildi** ve Cortex-M7 çekirdeğine atandı  
+- **IN7 kanalı (PA7)** aktif edildi  
+- Mode → **Independent mode**  
+
+----------------------------------------------------
+📚 Çalışma Mantığı
+----------------------------------------------------
+1. Potansiyometreden gelen analog voltaj, **0–65535** arası dijital ADC değerine dönüştürülür (16-bit ADC).  
+2. Okunan değer yazılımda işlenerek istenilen uygulamalarda kullanılabilir.  
+   - Örneğin LED parlaklığını PWM ile kontrol etmek  
+   - Seri port üzerinden bilgisayara göndermek  
+   - Motor hızını ayarlamak  
+
+----------------------------------------------------
+⚙️ Kazanımlar
+----------------------------------------------------
+✔️ ADC temellerini öğrenme  
+✔️ Potansiyometre ile analog giriş oluşturma  
+✔️ GPIO/ADC pin eşleştirmeyi anlama  
+✔️ Dijitalleştirilmiş veriyi farklı uygulamalarda kullanabilme  
+
+====================================================
+
