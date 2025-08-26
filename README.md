@@ -1,6 +1,6 @@
 # 🚀 STM32H755 Çift Çekirdekli Eğitim Serisi
 
-Bu depo, **STM32H755 NUCLEO-H755ZI-Q** geliştirme kartı ile **çift çekirdekli gömülü sistem geliştirmeyi öğrenmek isteyenler** için hazırlanmış **53 adımlık kapsamlı bir eğitim setini** içerir.  
+Bu depo, **STM32H755 NUCLEO-H755ZI-Q** geliştirme kartı ile **çift çekirdekli gömülü sistem geliştirmeyi öğrenmek isteyenler** için hazırlanmış **56 adımlık kapsamlı bir eğitim setini** içerir.  
 
 📌 **Amacımız:**  
 STM32H755 ve çift çekirdekli ARM tabanlı mikrodenetleyiciler konusunda **internetteki bilgi eksikliğini gidermek**, anlaşılır ve Türkçe bir kaynak sunmak.
@@ -75,6 +75,8 @@ Her proje detaylı açıklama ve donanım bağlantı şeması içerir.
 
 ## 📚 Proje Listesi (Çekirdek Bilgisi ile)
 
+---
+
 ### **Temel Başlangıç (Tek Çekirdek - M7)**
 1. **01_Basic_Blink** → Dahili LED yakma (**M7**)  
 2. **02_Button_Control** → Buton ile LED kontrolü (**M7**)  
@@ -84,79 +86,110 @@ Her proje detaylı açıklama ve donanım bağlantı şeması içerir.
 
 ---
 
-### **ADC (Analog - Dijital Dönüşüm)**
-6. **06_ADC_Potentiometer** → Potansiyometre okuma (**M7**)  
-7. **07_ADC_Multiple_Channels** → Birden fazla ADC kanalı okuma (**M7**)  
-8. **08_ADC_Temperature_Sensor** → Dahili sıcaklık sensörü okuma (**M7**)  
-9. **09_ADC_DMA** → DMA ile ADC verisi okuma (**M7**)  
-10. **10_ADC_LightSensor** → LDR ile ışık ölçümü (**M7**)  
-11. **11_ADC_Joystick** → Joystick X-Y eksen okuma (**M7**)  
+### **GPIO ve Timer Uygulamaları**
+6. **06_Timer_Basic_Blink** → Timer ile LED yakma (**M7**)  
+7. **07_Timer_Interrupt_LED** → Timer interrupt ile LED kontrolü (**M7**)  
+8. **08_PWM_Basic** → PWM ile LED parlaklık kontrolü (**M7**)  
+9. **09_PWM_Buzzer_Tone** → PWM ile buzzer frekans üretimi (**M7**)  
+10. **10_Input_Capture_Button** → Timer input capture ile buton ölçümü (**M7**)  
 
 ---
 
-### **Dijital Haberleşme (Tek Kart + PC)**
-12. **12_UART_Communication** → UART ile veri gönderme/alma (**M7**)  
-13. **13_USART_PC_Communication** → Bilgisayar ile USART haberleşme (**M7**)  
-14. **14_USART_Interrupt_DMA** → USART’ı kesme + DMA ile kullanma (**M7**)  
-15. **15_I2C_LCD** → I2C ile LCD ekran kullanımı (**M7**)  
-16. **16_I2C_MPU6050** → MPU6050 sensöründen veri okuma (**M7**)  
-17. **17_SPI_OLED** → SPI ile OLED ekran kontrolü (**M7**)  
-18. **18_SPI_FlashMemory** → SPI tabanlı flash bellek okuma/yazma (**M7**)  
-19. **19_CAN_Basics** → CAN Bus ile mesaj gönderme/alma (**M7**)  
-20. **20_CAN_Filtering** → CAN Bus ID filtreleme (**M7**)  
-21. **21_USB_VirtualComPort** → USB üzerinden sanal seri port haberleşme (**M7**)  
+### **UART Haberleşme**
+11. **11_UART_Send** → UART ile bilgisayara veri gönderme (**M7**)  
+12. **12_UART_Receive** → UART ile bilgisayardan veri alma (**M7**)  
+13. **13_UART_LED_Control** → UART üzerinden LED kontrolü (**M7**)  
+14. **14_UART_Interrupt** → UART interrupt ile veri alma (**M7**)  
+15. **15_UART_DMA** → UART DMA ile hızlı veri aktarımı (**M7**)  
 
 ---
 
-### **İki STM32 Arasında Haberleşme**
-22. **22_UART_STM32toSTM32** → İki STM32 arasında UART ile haberleşme  
-23. **23_USART_STM32toSTM32_DMA** → UART + DMA ile yüksek hızlı haberleşme  
-24. **24_I2C_MasterSlave** → Bir STM32 Master, diğeri Slave olarak I2C haberleşmesi  
-25. **25_SPI_MasterSlave** → SPI Master-Slave haberleşmesi  
-26. **26_CAN_STM32Network** → 2 veya daha fazla STM32 ile CAN Bus ağı kurma  
-27. **27_Ethernet_ClientServer** → İki STM32 arasında TCP/IP haberleşmesi (Ethernet)  
-28. **28_IPCC_InterCore** → M7 ↔ M4 çekirdek arası IPCC ile veri paylaşımı  
+### **İki STM32 Arası Haberleşme (UART / SPI / I2C)**
+16. **16_UART_STM32_to_STM32** → İki STM32 arasında UART haberleşmesi  
+17. **17_SPI_STM32_to_STM32** → İki STM32 arasında SPI haberleşmesi  
+18. **18_I2C_STM32_to_STM32** → İki STM32 arasında I2C haberleşmesi  
 
 ---
 
-### **PWM ve Motor Kontrol**
-29. **29_PWM_LED_Dimming** → PWM ile LED parlaklık kontrolü (**M7**)  
-30. **30_PWM_Servo** → Servo motor kontrolü (**M7**)  
-31. **31_DC_Motor_Driver** → L298N ile DC motor sürme (**M7**)  
-32. **32_Stepper_Motor** → Step motor kontrolü (**M7**)  
-33. **33_Brushless_ESC** → ESC ile fırçasız motor sürme (**M7**)  
+### **SPI Haberleşme**
+19. **19_SPI_Master** → SPI master ile veri gönderimi (**M7**)  
+20. **20_SPI_Slave** → SPI slave ile veri alımı (**M7**)  
+21. **21_SPI_OLED_Display** → SPI OLED ekran sürme (**M7**)  
 
 ---
 
-### **Kesme ve Zamanlayıcılar**
-34. **34_Timer_Interrupt_LED** → Timer kesmesi ile LED blink (**M7**)  
-35. **35_EXTI_Button** → Harici kesme ile buton kontrolü (**M7**)  
-36. **36_Timer_Input_Capture** → PWM sinyal frekans ölçümü (**M7**)  
-37. **37_RTC_Clock** → RTC ile saat-tarih uygulaması (**M7**)  
-38. **38_Watchdog_Timer** → Watchdog ile sistem resetleme (**M7**)  
+### **I2C Haberleşme**
+22. **22_I2C_Scan** → I2C cihaz taraması (**M7**)  
+23. **23_I2C_LCD** → I2C LCD ekran kontrolü (**M7**)  
+24. **24_I2C_EEPROM** → I2C EEPROM okuma/yazma (**M7**)  
 
 ---
 
-### **Gelişmiş Projeler ve Çift Çekirdek**
-39. **39_FreeRTOS_Basics** → FreeRTOS ile temel task kullanımı (**M7**)  
-40. **40_FreeRTOS_MultiTask** → FreeRTOS ile sensör + UART + LED task yönetimi  
-41. **41_M7M4_LED_UART** → **M7** LED kontrol, **M4** UART haberleşme  
-42. **42_M7M4_SensorProcessing** → **M4** sensör verisi toplar, **M7** işler ve ekrana yazar  
-43. **43_M7M4_SharedMemory** → Paylaşımlı RAM üzerinden çekirdekler arası veri değişimi  
-44. **44_M7M4_IPCC_DMA** → IPCC + DMA ile yüksek hızlı inter-core iletişim  
-45. **45_Ethernet_WebServer** → Ethernet web sunucusu (**M7**) + arka plan veri toplama (**M4**)  
-46. **46_MQTT_Client** → STM32’den MQTT broker’a veri gönderme (Ethernet/WiFi)  
-47. **47_Firmware_Update_OTA** → **M7** ana yazılım, **M4** güncelleme yönetimi  
-48. **48_SDCard_FATFS** → SD kart üzerinden dosya yazma/okuma (FatFS)  
-49. **49_USB_HID_Device** → STM32’yi USB klavye/fare gibi göstermek  
-50. **50_AI_TinyML** → STM32 üzerinde TensorFlow Lite ile küçük bir ML modeli çalıştırma  
+### **ADC - Analog Okuma**
+25. **25_ADC_Potentiometer** → Potansiyometre ADC okuma (**M7**)  
+26. **26_ADC_Temperature** → Dahili sıcaklık sensörü okuma (**M7**)  
+27. **27_ADC_DMA** → ADC verilerini DMA ile okuma (**M7**)  
 
 ---
 
+### **Sensör Entegrasyonları**
+28. **28_MPU6050_I2C** → MPU6050 IMU sensör entegrasyonu (**M7**)  
+29. **29_HCSR04_Ultrasonic** → HC-SR04 ultrasonik mesafe sensörü (**M7**)  
+30. **30_DHT11_Temperature_Humidity** → DHT11 sıcaklık & nem sensörü (**M7**)  
+31. **31_BMP280_Pressure** → BMP280 basınç sensörü (**M7**)  
+32. **32_LDR_Light_Sensor** → LDR ile ışık ölçümü (ADC) (**M7**)  
+
+---
+
+### **Harici Bellek ve SD Kart**
+33. **33_SDCard_FatFS** → SD kart kullanımı, dosya yazma/okuma (**M7**)  
+34. **34_Flash_Write_Read** → Harici flash hafıza kullanımı (**M7**)  
+
+---
+
+### **RTOS Uygulamaları (FreeRTOS - M7)**
+35. **35_FreeRTOS_Basic_Task** → FreeRTOS ile LED blink task (**M7**)  
+36. **36_FreeRTOS_Queue** → FreeRTOS queue kullanımı (**M7**)  
+37. **37_FreeRTOS_Semaphore** → FreeRTOS semaphore ile senkronizasyon (**M7**)  
+38. **38_FreeRTOS_Timer** → FreeRTOS yazılım timer kullanımı (**M7**)  
+
+---
+
+### **Ethernet & İnternet Bağlantısı**
+39. **39_LwIP_TCP_Server** → STM32 TCP server (**M7**)  
+40. **40_LwIP_TCP_Client** → STM32 TCP client (**M7**)  
+41. **41_HTTP_Client** → STM32 HTTP GET isteği (**M7**)  
+42. **42_MQTT_Client** → STM32 MQTT client uygulaması (**M7**)  
+
+---
+
+### **Çekirdekler Arası Haberleşme (M7 ↔ M4)**
+43. **43_CM7_to_CM4_Message** → CM7’den CM4’e mesaj gönderme  
+44. **44_CM4_to_CM7_Message** → CM4’ten CM7’ye mesaj gönderme  
+45. **45_CM7_CM4_SharedMemory** → Paylaşımlı bellek ile iletişim  
+46. **46_CM7_CM4_Sync_LED** → Çekirdekler arası LED senkronizasyonu  
+
+---
+
+### **Gelişmiş Timer Uygulamaları**
+47. **47_PWM_Motor_Control** → PWM ile DC motor kontrolü (**M7**)  
+48. **48_Servo_Motor_Control** → Servo motor kontrolü (PWM) (**M7**)  
+49. **49_Input_Capture_Frequency** → Sinyal frekans ölçümü (Input Capture) (**M7**)  
+50. **50_Quadrature_Encoder** → Enkoder ile motor konum ölçümü (**M7**)  
+
+---
+
+### **Son Uygulamalar**
+51. **51_Remote_Sensor_Data** → UART ile sensör verilerini PC’ye gönderme (**M7**)  
+52. **52_DualCore_Sensor_Fusion** → CM7 sensör okuma, CM4 veri işleme
+53. **53_MultiSensor_IoT_Node** → Çok sensörlü IoT düğümü (M4 sensör verisi toplar, M7 buluta gönderir)  
+54. **54_DualCore_RobotControl** → Çift çekirdekli robot/drone mimarisi (M4 sensör + M7 motor/haberleşme)  
+55. **55_Smart_Home_Gateway** → STM32 tabanlı akıllı ev IoT merkezi (Ethernet/WiFi + MQTT)  
+56. **56_Final_Project** → Çok çekirdekli + sensör + haberleşme içeren final proje  
+
+---
 ### **Gerçek Hayat IoT Projeleri**
-51. **51_MultiSensor_IoT_Node** → Çok sensörlü IoT düğümü (M4 sensör verisi toplar, M7 buluta gönderir)  
-52. **52_DualCore_RobotControl** → Çift çekirdekli robot/drone mimarisi (M4 sensör + M7 motor/haberleşme)  
-53. **53_Smart_Home_Gateway** → STM32 tabanlı akıllı ev IoT merkezi (Ethernet/WiFi + MQTT)  
+
 
 ---
 
